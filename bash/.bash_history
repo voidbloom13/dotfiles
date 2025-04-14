@@ -184,3 +184,15 @@ tmux
 ls
 clear
 exit
+ls
+cd ..
+ls
+source .tmux.conf 
+clear
+ls
+nvim
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+clear
+rm -rf .tmux
+rm -rf .tmux.conf 
+exit
