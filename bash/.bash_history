@@ -196,3 +196,144 @@ clear
 rm -rf .tmux
 rm -rf .tmux.conf 
 exit
+clear
+exit
+nvim
+exit
+;q
+:q
+clear
+exit
+sudo nvim /etc/hosts
+sudo pacman -Syu
+sudo pacman -Syu git gcc npm python3 python3-pip python3-venv unzip 
+sudo pacman -Syu git gcc npm python3 unzip 
+sudo pacman -Syu neofetch python3-pip python3-venv
+sudo pacman -Syu neofetch
+clear
+neofetch
+ls
+ls -a
+git clone https://github.com/voidbloom13/dotfiles
+. .bashrc
+ls
+ls -a
+mv .bash_history .bash_history.bak
+mv .bash_logout .bash_logout.bak
+mv .bash_profile .bash_profile.bak
+mv .bashrc .bashrc.bak
+cd .config/
+ls -a
+cd ..
+cd dotfiles/
+ls
+stow bash/
+sudo pacman -Syu stow
+stow bash/
+. ../.bashrc
+ls
+cd ..
+ls
+cd
+timedatectl
+timedatectl --help
+localegen
+sudo localegen
+sudo vim /etc/local-gen
+sudo nvim /etc/local-gen
+sudo nvim /etc/local.gen
+sudo nvim /etc/locale.gen
+sudo nvim /etc/locale.conf 
+clear
+sudo pacman -Syu
+clear
+ls
+mkdir tools
+cd tools/
+git clone https://aur.archlinux.org/yay.git
+la
+ls
+cd yay/
+ls
+makepkg -s
+makepkg -si
+sudo pacman -Syu base-devel
+makepkg -si
+yay --versiopn
+yay --version
+clear
+curl -s https://ohmyposh.dev/install.sh | bash -s
+. ~/.bashrc
+echo $TERM
+ls
+cd ..
+ls
+cd ..
+ls
+clear
+. .bashrc
+systemctl timedatectl list-timezones
+timedatectl status
+timedatectl list
+timedatectl list-timezones
+timedatectl set-timezone US/Michigan
+sudo timedatectl set-timezone US/Michigan
+hwclock --systohc
+systemctl status systemd-timesyncd
+systemctl start systemd-timesyncd
+sudo systemctl start systemd-timesyncd
+sudo hwclock -s
+ls
+cd .cache/
+ls
+cd oh-my-posh/
+ls
+cd themes/
+nvim
+cd
+. .bashrc
+cd .cache/oh-my-posh/themes/
+nvim dracula.omp.json 
+clear
+l
+ls
+clear
+cd
+ls
+mkdir Documents
+ls
+cd dotfiles/
+stow nvim/
+ls
+stow tmux/
+sudo pacman -Syu tmux
+tmux
+clear
+ls
+rm -rf tmux/
+ls
+git add *
+git commit -m "Removed tmux"
+git config --global user.email dakota.huyghe.dev@gmail.com
+git config --global user.name Voidbloom
+git commit -m "Removed tmux"
+git push -u origin main
+gh
+sudo pacman -Syu gh
+yay -S gh
+clear
+sudo pacman -Syu github-cli
+gh auth login
+git push -u origin main
+CLEAR
+clear
+cd ..
+ls
+sudo pacman -R tmux
+ls
+sudo pacman -Syu tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+s
+ls
+nvim .tmux.conf
+tmux
