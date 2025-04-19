@@ -120,4 +120,4 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:/home/void/.local/bin
-eval "$(oh-my-posh init bash --config '/home/void/.cache/oh-my-posh/themes/dracula.omp.json')"
+eval "$(oh-my-posh init bash --config '/home/void/dracula.omp.json')"
