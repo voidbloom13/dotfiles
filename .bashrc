@@ -23,6 +23,3 @@ eval "$(oh-my-posh init bash --config '/home/void/dotfiles/dracula.omp.json')"
 
 # Runs the mklinks script to move old dotfiles to dotfiles_old directory and creates symlinks for the updated config.
 source $HOME/dotfiles/scripts/mklinks.sh
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
