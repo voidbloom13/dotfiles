@@ -3,13 +3,13 @@
 # This script goes through installing all of my default programs.
 
 # Initial update/upgrade and installs nala
-sudo apt update && sudo apt upgrade -y && sudo apt-get install nala
+sudo apt update && sudo apt upgrade -y && sudo apt-get install -y nala
 
 # Initial nala installs
 sudo nala install -y cifs-utils default-jdk gcc gh git maven neofetch nodejs npm python3 python3-pip python3-venv  tree unzip
 
 # Installs most recent version of nvim and VS Code from Snap
-if -f /etc/apt/preferences.d/nosnap.pref; then
+if [ -f /etc/apt/preferences.d/nosnap.pref ]; then
 	sudo rm /etc/apt/preferences.d/nosnap.pref
 fi
 sudo nala update && sudo nala install -y snapd

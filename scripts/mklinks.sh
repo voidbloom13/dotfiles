@@ -6,22 +6,22 @@ if [[ ! -d $HOME/dotfiles_old ]]; then
 fi
 
 # Checks old dotfiles and moves them to the dotfiles_old directory
-if [[ -f .bashrc ]]; then
-	mv .bashrc $HOME/dotfiles_old/.bashrc
+if [[ -f $HOME/.bashrc ]]; then
+	mv $HOME/.bashrc $HOME/dotfiles_old/.bashrc
 fi
-if [[ -f .bash_aliases ]]; then
-	mv .bash_aliases $HOME/dotfiles_old/.bash_aliases
+if [[ -f $HOME/.bash_aliases ]]; then
+	mv $HOME/.bash_aliases $HOME/dotfiles_old/.bash_aliases
 fi
-if [[ -d .config/nvim ]]; then
-	mv .config/nvim $HOME/dotfiles_old/nvim
+if [[ -d $HOME.config/nvim ]]; then
+	mv $HOME/.config/nvim $HOME/dotfiles_old/nvim
 fi
-if [[ -f .tmux.conf ]]; then
-	mv .tmux.conf $HOME/dotfiles_old/.tmux.conf
+if [[ -f $HOME.tmux.conf ]]; then
+	mv $HOME/.tmux.conf $HOME/dotfiles_old/.tmux.conf
 fi
 
 # Creates the .config directory if it doesn't already exits.
 if [[ ! -d $HOME/.config ]]; then
-  mkdir .config
+  mkdir -p $HOME/.config
 fi
 
 # Creates symlinks from dotfiles folder to original location
