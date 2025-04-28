@@ -13,7 +13,7 @@ read -p "Enter Mount Point, starting from HOME directory (ex: $HOME/Documents/Sh
 
 # If nothing is entered in for the mount point, mnt_point is set to the default value.
 if [[ -z  "$mnt_point" ]]; then
-  mnt_point="Documents/Shared"
+  mnt_point="$HOME/Documents/Shared"
 fi
 
 # If the mount point is already provisioned in /etc/fstab, the script exits without adding any entry to fstab.
@@ -23,7 +23,7 @@ if grep -q "$mnt_point" "/etc/fstab"; then
 fi
 
 # CDs to $HOME and creates the mount point if it doesn't already exist.
-mkdir -p "$HOME/$mnt_point"
+mkdir -p "$mnt_point"
 
 # Collects NAS username and password
 read -p "Username: " username
