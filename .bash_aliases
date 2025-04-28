@@ -1,0 +1,8 @@
+alias .....="cd ../../../.."
+alias ....="cd ../../.."
+alias ...="cd ../.."
+alias ..="cd .."
+alias grep="grep --color=auto"
+alias ll="ls -la --color=auto"
+alias ls="ls -a --color=auto"
+alias vim="nvim"
