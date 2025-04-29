@@ -24,8 +24,10 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google.asc] http:/
 sudo apt-get update
 sudo apt-get install google-chrome-stable
 
-# Installs Node Version Manager (NVM)
+# Installs Node Version Manager (NVM) and NodeJS LTS
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+nvm install --lts
+nvm use --lts
 
 # Installs Typescript
 sudo npm install -g typescript
