@@ -65,6 +65,26 @@ case "$nas_setup" in
 		;;
 esac
 
+# Optionally, installs my favorite nerd fonts
+read -p "Would you like to install the following nerdfonts? { IosevkaTerm, Jetbrains Mono, Lilex, Mononoki, Victor Mono, Zed Mono } [Y]es [N]o : " install_fonts
+case "$install_fonts" in
+	[yY][eE][sS]|[yY])
+		source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
+		source $HOME/dotfiles/scripts/install-fonts.shhttps://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+		source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lilex.zip
+		source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Mononoki.zip
+		source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/VictorMono.zip
+		source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
+		;;
+	[nN][oO]|[nN])
+		break
+		;;
+	*)
+		echo "Invalid input. If you wish to run the Network Storage setup, please run {. $HOME/dotfiles/scripts/nas_setup.sh}"
+		;;
+esac
+
+
 # Cleanup
 sudo nala update && sudo nala upgrade -y
 sudo apt-get clean
