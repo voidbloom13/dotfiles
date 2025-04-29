@@ -17,6 +17,13 @@ sudo systemctl start snapd && sudo systemctl enable snapd
 sudo snap install nvim --classic
 sudo snap install code --classic
 
+# Installs Google Chrome (I know, why use Linux and then install Chrome... I like Chrome.)
+mkdir /etc/apt/keyrings
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/keyrings/google.asc > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google.asc] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+
 # Installs Node Version Manager (NVM)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
