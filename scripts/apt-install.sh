@@ -6,7 +6,7 @@
 sudo apt update && sudo apt upgrade -y && sudo apt-get install -y nala
 
 # Initial nala installs
-sudo nala install -y cifs-utils curl default-jdk gcc gh git maven neofetch nodejs npm python3 python3-pip python3-venv  tree unzip
+sudo nala install -y cifs-utils curl default-jdk gcc gh git maven neofetch nodejs npm python3 python3-pip python3-venv tmux tree unzip
 
 # Installs most recent version of nvim and VS Code from Snap
 if [ -f /etc/apt/preferences.d/nosnap.pref ]; then
