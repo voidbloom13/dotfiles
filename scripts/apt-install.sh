@@ -6,7 +6,7 @@
 sudo apt update && sudo apt upgrade -y && sudo apt-get install -y nala
 
 # Initial nala installs
-sudo nala install -y cifs-utils curl default-jdk gcc gh git maven neofetch nodejs npm python3 python3-pip python3-venv tmux tree unzip
+sudo nala install -y cifs-utils curl default-jdk gcc gh git kitty maven neofetch nodejs npm python3 python3-pip python3-venv tmux tree unzip
 
 # Installs most recent version of nvim and VS Code from Snap
 if [ -f /etc/apt/preferences.d/nosnap.pref ]; then
@@ -23,6 +23,11 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo tee /e
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google.asc] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt-get update
 sudo apt-get install google-chrome-stable
+
+# Installs Obsidian
+curl -O https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/obsidian_1.8.10_amd64.deb
+sudo dpkg -i obsidian_1.8.10_amd64.deb
+rm obsidian_1.8.10_amd64.deb
 
 # Installs Node Version Manager (NVM) and NodeJS LTS
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash

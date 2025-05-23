@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Checks if .bash_aliases exists, and copies contents to new .bash_aliases file.
+if [ -f $HOME/.bash_aliases ]; then
+    mv $HOME/dotfiles/.bash_aliases $HOME/dotfiles/.bash_aliases.tmp
+    cat $HOME/.bash_aliases $HOME/dotfiles/.bash_aliases.tmp | sort | uniq | grep -v '^$' > $HOME/dotfiles/.bash_aliases
+    rm $HOME/dotfiles/.bash_aliases.tmp
+fi
+
 # Checks if dotfiles_old directory exists. Creates it if it doesn't
 if [[ ! -d $HOME/dotfiles_old ]]; then
 	mkdir -p $HOME/dotfiles_old

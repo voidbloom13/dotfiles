@@ -9,12 +9,7 @@ if grep -q $ip_addr /etc/fstab; then
 fi
 
 # User must enter the full path from root "/".
-read -p "Enter Mount Point, starting from HOME directory (ex: $HOME/Documents/Shared, enter Documents/Shared): " -i "Documents/Shared" -e mnt_point
-
-# If nothing is entered in for the mount point, mnt_point is set to the default value.
-if [[ -z  "$mnt_point" ]]; then
-  mnt_point="$HOME/Documents/Shared"
-fi
+read -p "Enter full path to mount point: " -i "/home/Shared" -e mnt_point
 
 # If the mount point is already provisioned in /etc/fstab, the script exits without adding any entry to fstab.
 if grep -q "$mnt_point" "/etc/fstab"; then
@@ -30,7 +25,17 @@ read -p "Username: " username
 read -s -p "Password: " password
 
 # Adds fstab entry, reloads systemctl, and mounts fstab entries.
-echo -e "# Provisions NAS $ip_addr to $mnt_point\n//$ip_addr/Shared $mnt_point cifs uid=1000,gid=1000,username=$username,password=$password 0 0" | sudo tee -a /etc/fstab
-echo -e "\n"
-sudo systemctl daemon-reload
-sudo mount -a
+read -p "IP: $ip_addr\nMount Point: $mnt_point\nIs this correct? [Y]es [N]o : " is_correct
+case "$is_correct" in
+  [Yy]|[Yy][Ee][Ss]) 
+    echo -e "# Provisions NAS $ip_addr to $mnt_point\n//$ip_addr/Shared $mnt_point cifs uid=1000,gid=1000,username=$username,password=$password 0 0" | sudo tee -a /etc/fstab
+    echo -e "\n"
+    sudo systemctl daemon-reload
+    sudo mount -a
+  ;;
+  *)
+    echo "Provisioning failed. Please manually edit /etc/fstab or run $HOME/dotfiles/scripts/nas-setup.sh."
+    return 1
+  ;;
+esac
+
