@@ -4,7 +4,7 @@
 cd
 
 # Installs base packages
-sudo pacman -Syu base-devel chromium cifs-utils curl gcc git jdk-openjdk kitty maven nvim nodejs npm obsidian tree tmux unzip zsh
+sudo pacman -Syu base-devel chromium cifs-utils curl gcc git github-cli jdk-openjdk kitty maven nvim nodejs npm obsidian tree tmux unzip zsh
 
 # Installs all nerd-fonts
 sudo pacman -S $(pacman -Sgq nerd-fonts)
