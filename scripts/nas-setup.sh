@@ -25,7 +25,8 @@ read -p "Username: " username
 read -s -p "Password: " password
 
 # Adds fstab entry, reloads systemctl, and mounts fstab entries.
-read -p "IP: $ip_addr\nMount Point: $mnt_point\nIs this correct? [Y]es [N]o : " is_correct
+printf "\n\nIP: $ip_addr\nMount Point: $mnt_point\nIs this correct? [Y]es [N]o : "
+read is_correct
 case "$is_correct" in
   [Yy]|[Yy][Ee][Ss]) 
     echo -e "# Provisions NAS $ip_addr to $mnt_point\n//$ip_addr/Shared $mnt_point cifs uid=1000,gid=1000,username=$username,password=$password 0 0" | sudo tee -a /etc/fstab
