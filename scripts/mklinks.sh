@@ -13,6 +13,9 @@ if [[ ! -d $HOME/dotfiles_old ]]; then
 fi
 
 # Checks old dotfiles and moves them to the dotfiles_old directory
+if [[ -f $HOME/.zshrc ]]; then
+  mv $HOME/.zshrc $HOME/dotfiles_old/.zshrc
+fi
 if [[ -f $HOME/.bashrc ]]; then
 	mv $HOME/.bashrc $HOME/dotfiles_old/.bashrc
 fi
@@ -32,6 +35,7 @@ if [[ ! -d $HOME/.config ]]; then
 fi
 
 # Creates symlinks from dotfiles folder to original location
+ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
 ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/dotfiles/nvim $HOME/.config

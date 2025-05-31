@@ -4,7 +4,7 @@
 cd
 
 # Installs base packages
-sudo pacman -Syu base-devel chromium cifs-utils curl gcc git github-cli jdk-openjdk kitty maven nvim nodejs npm obsidian tree tmux unzip zsh
+sudo pacman -Syu base-devel chromium cifs-utils curl fzf gcc git github-cli jdk-openjdk kitty maven nvim nodejs npm obsidian tree tmux unzip zoxide zsh
 
 # Installs all nerd-fonts
 sudo pacman -S $(pacman -Sgq nerd-fonts)
@@ -13,7 +13,7 @@ sudo pacman -S $(pacman -Sgq nerd-fonts)
 git clone https://aur.archlinux.org/yay
 cd yay
 makepkg -si
-cd && rm -rf yay
+cd .. && rm -rf yay
 
 # Clones tmux/tpm
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
