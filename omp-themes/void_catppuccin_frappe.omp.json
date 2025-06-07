@@ -67,14 +67,14 @@
           "type": "text"
         }
       ]
-    },
-    {
-      "transient_prompt": {
-        "foreground": "p:closer",
-        "template": "\uf105"
-      }
     }
   ],
+  {
+  "transient_prompt": {
+    "foreground": "p:closer",
+    "template": "\uf105"
+    }
+  },
   "final_space": true,
   "version": 3
 }

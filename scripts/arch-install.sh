@@ -4,7 +4,7 @@
 cd
 
 # Installs base packages
-sudo pacman -Syu base-devel chromium cifs-utils curl fzf gcc git github-cli jdk-openjdk kitty maven nvim nodejs npm obsidian tree tmux unzip zoxide zsh
+sudo pacman -Syu base-devel chromium cifs-utils curl fastfetch fzf gcc git github-cli jdk-openjdk kitty man maven nvim nodejs npm obsidian tree tmux unzip zoxide zsh
 
 # Installs all nerd-fonts
 sudo pacman -S $(pacman -Sgq nerd-fonts)
@@ -33,9 +33,6 @@ case "$gh_setup" in
 		git config --global user.name "$gh_name"
 		echo -e "\n"
 		;;
-	[nN][oO]|[nN])
-		break
-		;;
 	*)
 		echo "Invalid input. If you wish to setup git config, please run {git config --global user.name "[git username]" && git config --global user.email [email]}"
 		;;
@@ -46,10 +43,10 @@ case "$nas_setup" in
 	[yY][eE][sS]|[yY])
 		source $HOME/dotfiles/scripts/nas-setup.sh
 		;;
-	[nN][oO]|[nN])
-		break
-		;;
 	*)
 		echo "Invalid input. If you wish to run the Network Storage setup, please run {. $HOME/dotfiles/scripts/nas_setup.sh}"
 		;;
 esac
+
+. $HOME/dotfiles/scripts/mklinks.sh
+clear && echo "Please make sure to change user shell to zsh with chsh."
