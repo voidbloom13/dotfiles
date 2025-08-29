@@ -16,6 +16,12 @@ sudo systemctl start snapd && sudo systemctl enable snapd
 sudo snap install nvim --classic
 sudo snap install code --classic
 
+# Installs the .NET SDK
+sudo apt install ca-certificates libc6 libgcc-s1 libicu74 liblttng-ust1 libssl3 libstdc++6 zlib1g
+sudo add-apt-repository ppa:dotnet/backports
+sudo apt-get update && 
+sudo apt-get install -y dotnet-sdk-9.0
+
 # Installs Google Chrome
 mkdir /etc/apt/keyrings
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/keyrings/google.asc > /dev/null
@@ -50,10 +56,6 @@ source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd
 # Creates symlinks for dotfiles
 source $HOME/dotfiles/scripts/mklinks.sh
 
-# Sets zsh as default Shell
-zsh_loc=which zsh
-chsh -s $zsh_loc
-
 # Cleanup
 sudo apt update && sudo nala upgrade -y
 sudo apt-get clean
@@ -61,4 +63,7 @@ sudo apt-get autoclean
 sudo apt-get autoremove
 
 # Sources .bashrc, uncomment if using bash as default shell
-# . $HOME/dotfiles/.bashrc
+. $HOME/dotfiles/.bashrc
+
+# Misc
+clear && neofetch $$ echo "Next Steps:\n- Change shell to zsh [chsh]\n- Run [git config --global user.name {username} && git config --global user.email {email}]\n- Run [gh auth login]"
