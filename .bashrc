@@ -9,6 +9,7 @@ source $HOME/dotfiles/.bash_aliases
 # General settings
 export EDITOR=vim
 export HISTCONTROL=ignoredups
+export PATH="$PATH:/snap/bin"
 
 # Default PS1 Prompt
 PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)';
@@ -19,7 +20,4 @@ export PATH=$PATH:$HOME/.local/bin
 if [[ -z "$(command -v oh-my-posh)" ]]; then
     curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
-eval "$(oh-my-posh init bash --config '/home/void/dotfiles/dracula.omp.json')"
-
-# Runs the mklinks script to move old dotfiles to dotfiles_old directory and creates symlinks for the updated config.
-source $HOME/dotfiles/scripts/mklinks.sh
+eval "$(oh-my-posh init bash --config "$HOME/dotfiles/omp-themes/void_catppuccin.omp.toml")"

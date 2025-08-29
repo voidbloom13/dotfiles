@@ -44,7 +44,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # ALIASES
 alias ls='ls -a --color'
-alias neofetch="fastfetch"
+alias vim='nvim'
+
+# PATH EXTENSIONS
+export PATH="$PATH:/snap/bin"
 
 # SHELL INTEGRATIONS
 eval "$(fzf --zsh)"
@@ -61,4 +64,4 @@ fi
 eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/omp-themes/void_catppuccin.omp.toml")"
 
 # Runs Fastfetch on open
-clear && fastfetch
+clear && neofetch
