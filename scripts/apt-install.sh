@@ -66,4 +66,4 @@ sudo apt-get autoremove
 . $HOME/dotfiles/.bashrc
 
 # Misc
-clear && neofetch $$ echo "Next Steps:\n- Change shell to zsh [chsh]\n- Run [git config --global user.name {username} && git config --global user.email {email}]\n- Run [gh auth login]"
+clear && neofetch && echo "Next Steps:\n- Change shell to zsh [chsh]\n- Run [git config --global user.name {username} && git config --global user.email {email}]\n- Run [gh auth login]"
