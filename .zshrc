@@ -46,6 +46,7 @@ alias vim='nvim'
 
 # PATH EXTENSIONS
 export PATH="$PATH:/snap/bin"
+export DEV="$HOME/Documents/Programming"
 
 # SHELL INTEGRATIONS
 eval "$(fzf --zsh)"
