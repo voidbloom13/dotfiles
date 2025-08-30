@@ -5,7 +5,11 @@
 # Initial update/upgrade and installs initial software
 sudo apt update && 
 sudo apt upgrade -y && 
+<<<<<<< HEAD:scripts/apt-install.sh
 sudo apt-get install -y cifs-utils curl default-jdk gcc gh git kitty maven nala neofetch nodejs npm python3 python3-pip python3-venv tmux tree unzip zoxide zsh
+=======
+sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git kitty maven neofetch nodejs npm python3 python3-pip python3-venv tmux tree unzip zoxide zsh
+>>>>>>> 886a467 (refactored apt-install.sh into cli and de variants. updated .tmux.conf to install catppuccin theme instead of dracula.):scripts/apt-de-install.sh
 
 # Installs most recent version of nvim and VS Code from Snap
 if [ -f /etc/apt/preferences.d/nosnap.pref ]; then
@@ -42,6 +46,10 @@ nvm use --lts
 # Installs Typescript
 sudo npm install -g typescript
 
+# Downloads catppuccin theme for tmux
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+
 # Clones tmux/tpm
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
@@ -66,4 +74,8 @@ sudo apt-get autoremove
 . $HOME/dotfiles/.bashrc
 
 # Misc
+<<<<<<< HEAD:scripts/apt-install.sh
 clear && neofetch && echo "Next Steps:\n- Change shell to zsh [chsh]\n- Run [git config --global user.name {username} && git config --global user.email {email}]\n- Run [gh auth login]"
+=======
+clear && neofetch $$ echo "Next Steps:\n- Run tmux and press [<ctrl> + b, i] to install tpm plugins\n- Change shell to zsh [chsh]\n- Run [git config --global user.name {username} && git config --global user.email {email}]\n- Run [gh auth login]"
+>>>>>>> 886a467 (refactored apt-install.sh into cli and de variants. updated .tmux.conf to install catppuccin theme instead of dracula.):scripts/apt-de-install.sh
