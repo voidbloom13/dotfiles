@@ -32,7 +32,7 @@ nvm install --lts
 nvm use --lts
 
 # Installs Typescript
-sudo npm install -g typescript
+sudo npm install -g nodemon typescript
 
 # Downloads catppuccin theme for tmux
 mkdir -p ~/.config/tmux/plugins/catppuccin
