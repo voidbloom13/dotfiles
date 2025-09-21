@@ -43,6 +43,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # ALIASES
 alias ls='ls -a --color'
 alias vim='nvim'
+alias chad='NVIM_APPNAME=nvchad nvim'
 
 # PATH EXTENSIONS
 export PATH="$PATH:/snap/bin"

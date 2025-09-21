@@ -15,6 +15,9 @@ sudo apt update && sudo apt install -y snapd
 sudo systemctl start snapd && sudo systemctl enable snapd
 sudo snap install nvim --classic
 
+# Installs NvChad alongside current config. Setup alias using the following in .zshrc or .bashrc/.bashaliases: alias [aliasName]="NVIM_APPNAME=[dirName] nvim"
+git clone https://github.com/NvChad/starter ~/dotfiles/nvchad
+
 # Detects if in WSL environment before installing VS Code
 if [[ $(uname -r) =~ WSL ]]; then
   sudo snap install code --classic

@@ -9,24 +9,39 @@ fi
 
 # Checks if dotfiles_old directory exists. Creates it if it doesn't
 if [[ ! -d $HOME/dotfiles_old ]]; then
-	mkdir -p $HOME/dotfiles_old
+  mkdir -p $HOME/dotfiles_old
 fi
 
 # Checks old dotfiles and moves them to the dotfiles_old directory
+
+# ZSH CONFIG
 if [[ -f $HOME/.zshrc ]]; then
   mv $HOME/.zshrc $HOME/dotfiles_old/.zshrc
 fi
+
+# BASH CONFIG
 if [[ -f $HOME/.bashrc ]]; then
-	mv $HOME/.bashrc $HOME/dotfiles_old/.bashrc
+  mv $HOME/.bashrc $HOME/dotfiles_old/.bashrc
 fi
+
+# BASH ALIASES
 if [[ -f $HOME/.bash_aliases ]]; then
-	mv $HOME/.bash_aliases $HOME/dotfiles_old/.bash_aliases
+  mv $HOME/.bash_aliases $HOME/dotfiles_old/.bash_aliases
 fi
-if [[ -d $HOME.config/nvim ]]; then
-	mv $HOME/.config/nvim $HOME/dotfiles_old/nvim
+
+# NVIM CONFIG
+if [[ -d $HOME/.config/nvim ]]; then
+  mv $HOME/.config/nvim $HOME/dotfiles_old/nvim
 fi
-if [[ -f $HOME.tmux.conf ]]; then
-	mv $HOME/.tmux.conf $HOME/dotfiles_old/.tmux.conf
+
+# NVCHAD CONFIG
+if [[ -d $HOME/.config/nvchad ]]; then
+  mv $HOME/.config/nvchad $HOME/dotfiles_old/nvchad
+fi
+
+# TMUX CONFIG
+if [[ -f $HOME/.tmux.conf ]]; then
+  mv $HOME/.tmux.conf $HOME/dotfiles_old/.tmux.conf
 fi
 
 # Creates the .config directory if it doesn't already exits.
@@ -39,4 +54,5 @@ ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
 ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/dotfiles/nvim $HOME/.config
+ln -s $HOME/dotfiles/nvchad $HOME/.config
 ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
