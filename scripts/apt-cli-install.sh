@@ -5,11 +5,16 @@
 # Initial update/upgrade and installs initial software
 sudo apt update && 
 sudo apt upgrade -y && 
-sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git maven neofetch nodejs npm python3 python3-pip python3-venv tmux tree unzip zoxide zsh
+sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git maven neofetch nodejs npm python3 python3-pip python3-venv ripgrep tmux tree unzip zoxide zsh
+
+# Installs latest fzf
+rm -rf ~/.fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+cd ~/.fzf && git pull && ./install
 
 # Installs most recent version of nvim and VS Code from Snap
 if [ -f /etc/apt/preferences.d/nosnap.pref ]; then
-	sudo rm /etc/apt/preferences.d/nosnap.pref
+  sudo rm /etc/apt/preferences.d/nosnap.pref
 fi
 sudo apt update && sudo apt install -y snapd
 sudo systemctl start snapd && sudo systemctl enable snapd

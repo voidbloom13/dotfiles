@@ -23,5 +23,4 @@ fc-cache -f -v
 
 # Clean up
 rm -rf "$TEMP_DIR"
-
 echo "Fonts installed successfully!"

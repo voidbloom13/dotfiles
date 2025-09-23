@@ -38,6 +38,7 @@ return { -- Autoformat
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
 
       css = { "prettier" },
+      c_sharp = { "csharpier" },
       html = { "prettier" },
       java = { "google-java-format" },
       javascript = { "prettier" },

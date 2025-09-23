@@ -10,6 +10,7 @@ source $HOME/dotfiles/.bash_aliases
 export EDITOR=vim
 export HISTCONTROL=ignoredups
 export PATH="$PATH:/snap/bin"
+export PATH="$PATH/$HOME/.dotnet/tools"
 export DEV="$HOME/Documents/Programming"
 
 # Default PS1 Prompt
@@ -22,3 +23,5 @@ if [[ -z "$(command -v oh-my-posh)" ]]; then
     curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 eval "$(oh-my-posh init bash --config "$HOME/dotfiles/omp-themes/void_catppuccin.omp.toml")"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -64,7 +64,7 @@ return {
       vim.diagnostic.config { signs = { text = diagnostic_signs } }
     end
 
-    -- LSP servers and clients are able to communicate to each other what features they support.
+    --  LSP servers and clients are able to communicate to each other what features they support.
     --  By default, Neovim doesn't support everything that is in the LSP specification.
     --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
     --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
@@ -74,12 +74,14 @@ return {
     --  TODO Ensure these lsps are configured properly
     local servers = {
       cssls = {},
+      csharp_ls = {},
       docker_compose_language_service = {},
       html = {},
       jdtls = {},
       lemminx = {},
       lua_ls = {},
       pyright = {},
+      stylua = {},
       ts_ls = {},
     }
 
@@ -89,6 +91,8 @@ return {
       "black",
       "prettier",
       "prettierd",
+      "csharpier",
+      "google-java-format",
       "stylua",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

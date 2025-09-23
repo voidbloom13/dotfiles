@@ -1,4 +1,4 @@
-# ZINIT DIRECTORY
+# ZINIT DIRECTORY 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # BOOTSTRAP ZINIT
@@ -20,7 +20,7 @@ zinit light Aloxaf/fzf-tab
 bindkey '^ ' autosuggest-accept
 
 # HISTORY
-HISTSIZE=5000
+HISTSIZE=1000
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -47,10 +47,10 @@ alias chad='NVIM_APPNAME=nvchad nvim'
 
 # PATH EXTENSIONS
 export PATH="$PATH:/snap/bin"
-export DEV="$HOME/Documents/Programming"
+export PATH="$PATH:/$HOME/.dotnet/tools"
 
 # SHELL INTEGRATIONS
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # PROMPT STYLE
@@ -63,9 +63,9 @@ fi
 # Sets Prompt Theme
 eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/omp-themes/void_catppuccin.omp.toml")"
 
-# Runs Fastfetch on open
-clear && neofetch
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

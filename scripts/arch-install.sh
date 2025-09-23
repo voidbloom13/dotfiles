@@ -4,10 +4,13 @@
 cd
 
 # Installs base packages
-sudo pacman -Syu base-devel chromium cifs-utils curl fastfetch fzf gcc git github-cli jdk-openjdk kitty man maven nvim nodejs npm obsidian tree tmux unzip zoxide zsh
+sudo pacman -Syu aspnet-runtime base-devel cifs-utils curl dotnet-runtime dotnet-sdk fastfetch fzf gcc git github-cli jdk-openjdk kitty man maven nvim nodejs npm obsidian ripgrep tree tmux unzip zoxide zsh
 
 # Installs all nerd-fonts
 sudo pacman -S $(pacman -Sgq nerd-fonts)
+
+# Installs NvChad alongside current config. Setup alias using the following in .zshrc or .bashrc/.bashaliases: alias [aliasName]="NVIM_APPNAME=[dirName] nvim"
+git clone https://github.com/NvChad/starter ~/dotfiles/nvchad
 
 # Clones and Installs yay
 git clone https://aur.archlinux.org/yay
@@ -18,35 +21,19 @@ cd .. && rm -rf yay
 # Clones tmux/tpm
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
+# Downloads catppuccin theme for tmux
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+
 # Installs VS Code
 yay -S visual-studio-code-bin
 
 # Installs Google Chrome
 yay -S google-chrome
 
-read -p "Setup Git config? [Y]es [N]o : " gh_setup
-case "$gh_setup" in
-	[yY][eE][sS]|[yY])
-		read -p "Github Email Address: " gh_email
-		read -p "Github Username: " gh_name
-		git config --global user.email "$gh_email"
-		git config --global user.name "$gh_name"
-		echo -e "\n"
-		;;
-	*)
-		echo "Invalid input. If you wish to setup git config, please run {git config --global user.name "[git username]" && git config --global user.email [email]}"
-		;;
-esac
-
-read -p "Add Network Storage mount? [Y]es [N]o : " nas_setup
-case "$nas_setup" in
-	[yY][eE][sS]|[yY])
-		source $HOME/dotfiles/scripts/nas-setup.sh
-		;;
-	*)
-		echo "Invalid input. If you wish to run the Network Storage setup, please run {. $HOME/dotfiles/scripts/nas_setup.sh}"
-		;;
-esac
+# Adds .dotnet to $PATH
+echo "export PATH='$PATH/$HOME/.dotnet/tools'" >> $HOME/dotfiles/.bashrc
+echo "export PATH='$PATH/$HOME/.dotnet/tools'" >> $HOME/dotfiles/.zshrc
 
 . $HOME/dotfiles/scripts/mklinks.sh
-clear && echo "Please make sure to change user shell to zsh with chsh."
+clear && echo "Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins. Please make sure to change user shell to zsh with chsh. Setup git config --global user.name and user.email. Authorize github using [gh auth login]."

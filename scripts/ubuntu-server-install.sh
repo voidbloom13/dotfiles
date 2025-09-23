@@ -23,7 +23,7 @@ sudo apt-get update
 
 # Installs most recent version of nvim and from Snap
 if [ -f /etc/apt/preferences.d/nosnap.pref ]; then
-	sudo rm /etc/apt/preferences.d/nosnap.pref
+  sudo rm /etc/apt/preferences.d/nosnap.pref
 fi
 sudo apt update && sudo apt install -y snapd
 sudo systemctl start snapd && sudo systemctl enable snapd
