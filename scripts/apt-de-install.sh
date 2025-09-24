@@ -79,4 +79,4 @@ sudo apt-get autoremove
 . $HOME/dotfiles/.bashrc
 
 # Misc
-cd && clear && neofetch && echo "Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins. Please make sure to change user shell to zsh with chsh. Setup git config --global user.name and user.email. Authorize github using [gh auth login]."
+cd && clear && neofetch && echo "***Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins.\n***Please make sure to change user shell to zsh with chsh.\n***Setup git config --global user.name and user.email.\n***Authorize github using [gh auth login]."
