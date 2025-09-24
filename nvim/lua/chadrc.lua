@@ -1,7 +1,10 @@
 local M = {
   base46 = {
-    theme = "github_dark",
+    theme = "ashes",
     hl_add = {
+      vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "cyan" }),
+      vim.api.nvim_set_hl(0, "LineNr", { fg = "magenta" }),
+      vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "cyan" })
     },
     transparency = true
   },
@@ -15,8 +18,8 @@ local M = {
     },
     statusline = {
       enabled = true,
-      theme = "minimal",
-      separator_style = "round",
+      theme = "default",
+      separator_style = "default",
       order = nil,
       modules = nil
     }

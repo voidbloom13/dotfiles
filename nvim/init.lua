@@ -12,8 +12,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local out = vim.fn.system({
     "git",
     "clone",
-    "--filter=blob:none",
-    "--branch=stable",
+    "filter=blob:none",
+    "branch=stable",
     lazyrepo,
     lazypath,
   })
@@ -42,4 +42,3 @@ dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require("config/colorscheme")
-
