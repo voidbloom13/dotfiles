@@ -1,10 +1,10 @@
 local M = {
   base46 = {
-    theme = "ashes",
+    theme = "eldritch",
     hl_add = {
-      vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "cyan" }),
-      vim.api.nvim_set_hl(0, "LineNr", { fg = "magenta" }),
-      vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "cyan" })
+      vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "gray" }),
+      vim.api.nvim_set_hl(0, "LineNr", { fg = "blue" }),
+      vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "gray" })
     },
     transparency = true
   },
@@ -19,7 +19,7 @@ local M = {
     statusline = {
       enabled = true,
       theme = "default",
-      separator_style = "default",
+      separator_style = "arrow",
       order = nil,
       modules = nil
     }

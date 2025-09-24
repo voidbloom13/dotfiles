@@ -9,9 +9,6 @@ sudo pacman -Syu aspnet-runtime base-devel cifs-utils curl dotnet-runtime dotnet
 # Installs all nerd-fonts
 sudo pacman -S $(pacman -Sgq nerd-fonts)
 
-# Installs NvChad alongside current config. Setup alias using the following in .zshrc or .bashrc/.bashaliases: alias [aliasName]="NVIM_APPNAME=[dirName] nvim"
-git clone https://github.com/NvChad/starter ~/dotfiles/nvchad
-
 # Clones and Installs yay
 git clone https://aur.archlinux.org/yay
 cd yay
@@ -31,9 +28,5 @@ yay -S visual-studio-code-bin
 # Installs Google Chrome
 yay -S google-chrome
 
-# Adds .dotnet to $PATH
-echo "export PATH='$PATH/$HOME/.dotnet/tools'" >> $HOME/dotfiles/.bashrc
-echo "export PATH='$PATH/$HOME/.dotnet/tools'" >> $HOME/dotfiles/.zshrc
-
 . $HOME/dotfiles/scripts/mklinks.sh
-clear && echo "Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins. Please make sure to change user shell to zsh with chsh. Setup git config --global user.name and user.email. Authorize github using [gh auth login]."
+cd && clear && fastfetch && echo "Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins. Please make sure to change user shell to zsh with chsh. Setup git config --global user.name and user.email. Authorize github using [gh auth login]."

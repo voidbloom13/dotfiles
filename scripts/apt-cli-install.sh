@@ -20,9 +20,6 @@ sudo apt update && sudo apt install -y snapd
 sudo systemctl start snapd && sudo systemctl enable snapd
 sudo snap install nvim --classic
 
-# Installs NvChad alongside current config. Setup alias using the following in .zshrc or .bashrc/.bashaliases: alias [aliasName]="NVIM_APPNAME=[dirName] nvim"
-git clone https://github.com/NvChad/starter ~/dotfiles/nvchad
-
 # Detects if in WSL environment before installing VS Code
 if [[ $(uname -r) =~ WSL ]]; then
   sudo snap install code --classic
@@ -62,4 +59,4 @@ sudo apt-get autoremove
 . $HOME/dotfiles/.bashrc
 
 # Misc
-clear && neofetch $$ echo "Next Steps:\n- Run tmux and press [<ctrl> + b, i] to install tpm plugins\n- Change shell to zsh [chsh]\n- Run [git config --global user.name {username} && git config --global user.email {email}]\n- Run [gh auth login]"
+cd && clear && neofetch && echo "Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins. Please make sure to change user shell to zsh with chsh. Setup git config --global user.name and user.email. Authorize github using [gh auth login]."

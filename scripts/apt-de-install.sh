@@ -21,9 +21,6 @@ sudo systemctl start snapd && sudo systemctl enable snapd
 sudo snap install nvim --classic
 sudo snap install code --classic
 
-# Installs NvChad alongside current config. Setup alias using the following in .zshrc or .bashrc/.bashaliases: alias [aliasName]="NVIM_APPNAME=[dirName] nvim"
-git clone https://github.com/NvChad/starter ~/dotfiles/nvchad
-
 # Installs the .NET SDK
 sudo apt install ca-certificates libc6 libgcc-s1 libicu74 liblttng-ust1 libssl3 libstdc++6 zlib1g
 sudo add-apt-repository ppa:dotnet/backports
@@ -82,4 +79,4 @@ sudo apt-get autoremove
 . $HOME/dotfiles/.bashrc
 
 # Misc
-clear && neofetch $$ echo "Next Steps:\n- Run tmux and press [<ctrl> + b, i] to install tpm plugins\n- Change shell to zsh [chsh]\n- Run [git config --global user.name {username} && git config --global user.email {email}]\n- Run [gh auth login]"
+cd && clear && neofetch && echo "Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins. Please make sure to change user shell to zsh with chsh. Setup git config --global user.name and user.email. Authorize github using [gh auth login]."

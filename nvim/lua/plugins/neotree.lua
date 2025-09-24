@@ -16,6 +16,8 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
+    enable_git_status = true,
+    git_status_async = true,
     default_component_configs = {
       git_status = {
         symbols = {
@@ -32,6 +34,7 @@ return {
       }
     },
     filesystem = {
+      use_libuv_file_watcher = true,
       filtered_items = {
         visible = true,
         hide_dotfiles = false,

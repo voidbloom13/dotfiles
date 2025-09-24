@@ -10,8 +10,7 @@ source $HOME/dotfiles/.bash_aliases
 export EDITOR=vim
 export HISTCONTROL=ignoredups
 export PATH="$PATH:/snap/bin"
-export PATH="$PATH/$HOME/.dotnet/tools"
-export DEV="$HOME/Documents/Programming"
+export PATH="$PATH:/$HOME/.dotnet/tools"
 
 # Default PS1 Prompt
 PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)';
