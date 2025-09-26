@@ -42,13 +42,13 @@ ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
 if [[ -d $HOME/.config/nvim ]]; then
   mv $HOME/.config/nvim $HOME/dotfiles_old/nvim
 fi
-ln -s $HOME/dotfiles/nvim $HOME/.config
+ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
 
 # NVCHAD CONFIG
 if [[ -d $HOME/.config/nvchad ]]; then
   mv $HOME/.config/nvchad $HOME/dotfiles_old/nvchad
 fi
-ln -s $HOME/dotfiles/nvchad $HOME/.config
+ln -s $HOME/dotfiles/nvchad $HOME/.config/nvchad
 
 # TMUX CONFIG
 if [[ -f $HOME/.tmux.conf ]]; then
