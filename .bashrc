@@ -1,6 +1,6 @@
 # Adds the contents of any existing .bash_alias files to $HOME/dotfiles/.bash_aliases
 if [ -f $HOME/.bash_aliases ]; then
-    mv $HOME/.dotfiles/.bash_aliases $HOME/dotfiles/.bash_aliases.tmp
+    mv $HOME/.dotfiles/.bash_aliases $HOME/.dotfiles/.bash_aliases.tmp
     cat $HOME/.bash_aliases $HOME/.dotfiles/.bash_aliases.tmp | sort | uniq | grep -v '^$' > $HOME/.dotfiles/.bash_aliases
     rm $HOME/.dotfiles/.bash_aliases.tmp
 fi

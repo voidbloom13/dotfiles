@@ -10,7 +10,7 @@ fi
 # Initial update/upgrade and installs initial software
 sudo apt update && 
 sudo apt upgrade -y && 
-sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git kitty maven neofetch nodejs npm python3 python3-pip python3-venv ripgrep tmux tree unzip zoxide zsh
+sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git kitty maven neofetch nodejs npm python3 python3-pip python3-venv ripgrep stow tmux tree unzip zoxide zsh
 
 # Installs latest fzf
 rm -rf ~/.fzf

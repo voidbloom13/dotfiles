@@ -9,7 +9,7 @@ fi
 cd
 
 # Installs base packages
-sudo pacman -Syu aspnet-runtime base-devel cifs-utils curl dotnet-runtime dotnet-sdk fastfetch fzf gcc git github-cli jdk-openjdk kitty man maven nvim nodejs npm obsidian ripgrep tree tmux unzip zoxide zsh
+sudo pacman -Syu aspnet-runtime base-devel cifs-utils curl dotnet-runtime dotnet-sdk fastfetch fzf gcc git github-cli jdk-openjdk kitty man maven nvim nodejs npm obsidian ripgrep stow tree tmux unzip zoxide zsh
 
 # Installs all nerd-fonts
 sudo pacman -S $(pacman -Sgq nerd-fonts)
