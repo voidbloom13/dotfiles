@@ -45,13 +45,11 @@ alias ls='ls -a --color'
 alias vim='nvim'
 alias chad='NVIM_APPNAME=nvchad nvim'
 
-# PATH EXTENSIONS
-export PATH="$PATH:/snap/bin"
-export PATH="$PATH:/$HOME/.dotnet/tools"
-
 # SHELL INTEGRATIONS
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+source $HOME/.profile
 
 # PROMPT STYLE
 # Bootstraps Oh-My-Posh
@@ -61,7 +59,7 @@ if [[ -z "$(command -v oh-my-posh)" ]]; then
 fi
 
 # Sets Prompt Theme
-eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/omp-themes/void_catppuccin.omp.toml")"
+eval "$(oh-my-posh init zsh --config "$HOME/.dotfiles/utils/void_catppuccin.omp.toml")"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

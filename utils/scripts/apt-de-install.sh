@@ -2,6 +2,11 @@
 
 # This script goes through installing all of my default programs.
 
+# Renames dotfiles folder to .dotfiles
+if [[ -d "$HOME/dotfiles" ]]; then
+  mv "$HOME/dotfiles" "$HOME/.dotfiles"
+fi
+
 # Initial update/upgrade and installs initial software
 sudo apt update && 
 sudo apt upgrade -y && 
@@ -67,7 +72,7 @@ source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd
 source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
 
 # Creates symlinks for dotfiles
-source $HOME/dotfiles/scripts/mklinks.sh
+source $HOME/dotfiles/scripts/stow.sh
 
 # Cleanup
 sudo apt update && sudo nala upgrade -y

@@ -41,7 +41,7 @@ sudo npm install -g typescript
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 # Creates symlinks for dotfiles
-source $HOME/dotfiles/scripts/mklinks.sh
+source $HOME/dotfiles/scripts/stow.sh
 
 # Sets zsh as default Shell
 zsh_loc=which zsh

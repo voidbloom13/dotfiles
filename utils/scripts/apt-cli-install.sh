@@ -2,6 +2,11 @@
 
 # Installation walkthrough for wsl or headless apt-based systems.
 
+# Renames dotfiles folder to .dotfiles
+if [[ -d "$HOME/dotfiles" ]]; then
+  mv "$HOME/dotfiles" "$HOME/.dotfiles"
+fi
+
 # Initial update/upgrade and installs initial software
 sudo apt update && 
 sudo apt upgrade -y && 
@@ -47,7 +52,7 @@ git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugin
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 # Creates symlinks for dotfiles
-source $HOME/dotfiles/scripts/mklinks.sh
+source $HOME/dotfiles/scripts/stow.sh
 
 # Cleanup
 sudo apt update && sudo nala upgrade -y

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Renames dotfiles folder to .dotfiles
+if [[ -d "$HOME/dotfiles" ]]; then
+  mv "$HOME/dotfiles" "$HOME/.dotfiles"
+fi
+
 # CDs to $HOME
 cd
 
@@ -28,5 +33,5 @@ yay -S visual-studio-code-bin
 # Installs Google Chrome
 yay -S google-chrome
 
-. $HOME/dotfiles/scripts/mklinks.sh
+. $HOME/dotfiles/scripts/stow.sh
 cd && clear && fastfetch && echo "Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins. Please make sure to change user shell to zsh with chsh. Setup git config --global user.name and user.email. Authorize github using [gh auth login]."
