@@ -1,5 +1,6 @@
 # ZINIT DIRECTORY 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+export ZPFX="$HOME/.local"
 
 # BOOTSTRAP ZINIT
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -59,7 +60,7 @@ if [[ -z "$(command -v oh-my-posh)" ]]; then
 fi
 
 # Sets Prompt Theme
-eval "$(oh-my-posh init zsh --config "$HOME/.dotfiles/utils/void_catppuccin.omp.toml")"
+eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/utils/void_catppuccin.omp.toml")"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
