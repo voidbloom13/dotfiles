@@ -1,11 +1,14 @@
 # Adds the contents of any existing .bash_alias files to $HOME/dotfiles/.bash_aliases
-if [ -f $HOME/.bash_aliases ]; then
-    mv $HOME/.dotfiles/.bash_aliases $HOME/.dotfiles/.bash_aliases.tmp
-    cat $HOME/.bash_aliases $HOME/.dotfiles/.bash_aliases.tmp | sort | uniq | grep -v '^$' > $HOME/.dotfiles/.bash_aliases
-    rm $HOME/.dotfiles/.bash_aliases.tmp
+if [ -f $HOME/.bash_aliases ] && [ ! -L $HOME/.bash_aliases ]; then
+    echo "$HOME/dotfiles/.dotfiles/.bash_aliases" >> "$HOME/dotfiles/.dotfiles/.bash_aliases.tmp"
+    cat "$HOME/.bash_aliases" "$HOME/.bash_aliases.tmp" | sort | uniq | grep -v '^$' >> $HOME/dotfiles/.dotfiles/.bash_aliases
+    rm $HOME/.bash_aliases.tmp
 fi
-source $HOME/.dotfiles/.bash_aliases
-source $HOME/.dotfiles/.profile
+
+if [ -e $HOME/.bash_aliases ]; then
+	source $HOME/dotfiles/.dotfiles/.bash_aliases
+fi
+source $HOME/dotfiles/.dotfiles/.profile
 
 # General settings
 export EDITOR=vim

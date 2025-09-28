@@ -2,15 +2,10 @@
 
 # This script goes through installing all of my default programs.
 
-# Renames dotfiles folder to .dotfiles
-if [[ -d "$HOME/dotfiles" ]]; then
-  mv "$HOME/dotfiles" "$HOME/.dotfiles"
-fi
-
 # Initial update/upgrade and installs initial software
 sudo apt update && 
 sudo apt upgrade -y && 
-sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git kitty maven neofetch nodejs npm python3 python3-pip python3-venv ripgrep stow tmux tree unzip zoxide zsh
+sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git kitty maven nala neofetch nodejs npm python3 python3-pip python3-venv ripgrep stow tmux tree unzip zoxide zsh
 
 # Installs latest fzf
 rm -rf ~/.fzf
@@ -25,6 +20,7 @@ sudo apt update && sudo apt install -y snapd
 sudo systemctl start snapd && sudo systemctl enable snapd
 sudo snap install nvim --classic
 sudo snap install code --classic
+sudo snap install ghostty --classic
 
 # Installs the .NET SDK
 sudo apt install ca-certificates libc6 libgcc-s1 libicu74 liblttng-ust1 libssl3 libstdc++6 zlib1g
@@ -72,10 +68,10 @@ source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd
 source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
 
 # Creates symlinks for dotfiles
-source $HOME/dotfiles/scripts/stow.sh
+source $HOME/dotfiles/utils/scripts/stow.sh
 
 # Cleanup
-sudo apt update && sudo nala upgrade -y
+sudo apt update && sudo apt upgrade -y
 sudo apt-get clean
 sudo apt-get autoclean
 sudo apt-get autoremove

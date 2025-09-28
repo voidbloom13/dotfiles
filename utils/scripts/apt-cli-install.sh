@@ -2,15 +2,10 @@
 
 # Installation walkthrough for wsl or headless apt-based systems.
 
-# Renames dotfiles folder to .dotfiles
-if [[ -d "$HOME/dotfiles" ]]; then
-  mv "$HOME/dotfiles" "$HOME/.dotfiles"
-fi
-
 # Initial update/upgrade and installs initial software
 sudo apt update && 
 sudo apt upgrade -y && 
-sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git maven neofetch nodejs npm python3 python3-pip python3-venv ripgrep stow tmux tree unzip zoxide zsh
+sudo apt-get install -y build-essential cifs-utils curl default-jdk gcc gh git maven nala neofetch nodejs npm python3 python3-pip python3-venv ripgrep stow tmux tree unzip zoxide zsh
 
 # Installs latest fzf
 rm -rf ~/.fzf
@@ -52,7 +47,7 @@ git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugin
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 # Creates symlinks for dotfiles
-source $HOME/dotfiles/scripts/stow.sh
+source $HOME/dotfiles/utils/scripts/stow.sh
 
 # Cleanup
 sudo apt update && sudo nala upgrade -y
