@@ -1,26 +1,13 @@
 #!/bin/bash
 
-# Check if the URL is provided
-if [ -z "$1" ]; then
-  echo "Please provide a URL to a font zip file."
-  exit 1
-fi
-
-# Create a temporary directory
-TEMP_DIR=$(mktemp -d)
-
-# Download the font zip file
-wget -O "$TEMP_DIR/font.zip" "$1"
-
-# Unzip the font file
-unzip "$TEMP_DIR/font.zip" -d "$TEMP_DIR"
-
-# Move the font files to the system fonts directory
-sudo mv "$TEMP_DIR"/*.{ttf,otf} /usr/local/share/fonts/
-
-# Update the font cache
-fc-cache -f -v
-
-# Clean up
-rm -rf "$TEMP_DIR"
-echo "Fonts installed successfully!"
+# Installs favorite nerd fonts
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CommitMono.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Inconsolata.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lekton.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lilex.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Mononoki.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontSymbolsOnly.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/VictorMono.zip
+source $HOME/dotfiles/utils/scripts/font-install.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip

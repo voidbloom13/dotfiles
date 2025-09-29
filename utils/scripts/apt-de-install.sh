@@ -55,20 +55,11 @@ git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugin
 # Clones tmux/tpm
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
-# Installs favorite nerd fonts
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CommitMono.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Inconsolata.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lekton.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lilex.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Mononoki.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontSymbolsOnly.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/VictorMono.zip
-source $HOME/dotfiles/scripts/install-fonts.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
-
 # Creates symlinks for dotfiles
 source $HOME/dotfiles/utils/scripts/stow.sh
+
+# Installs Nerd Fonts
+source $HOME/dotfiles/utils/scripts/install-fonts.sh
 
 # Cleanup
 sudo apt update && sudo apt upgrade -y

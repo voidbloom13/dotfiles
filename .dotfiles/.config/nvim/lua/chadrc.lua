@@ -1,6 +1,6 @@
 local M = {
   base46 = {
-    theme = "chadracula",
+    theme = "material-deep-ocean",
     hl_add = {
       vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "gray" }),
       vim.api.nvim_set_hl(0, "LineNr", { fg = "blue" }),
