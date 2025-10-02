@@ -1,15 +1,18 @@
 #!/bin/bash
 
-# Renames dotfiles folder to .dotfiles
-if [[ -d "$HOME/dotfiles" ]]; then
-  mv "$HOME/dotfiles" "$HOME/.dotfiles"
-fi
-
 # CDs to $HOME
 cd
 
 # Installs base packages
-sudo pacman -Syu aspnet-runtime base-devel cifs-utils curl dotnet-runtime dotnet-sdk fastfetch fzf gcc ghostty git github-cli jdk-openjdk kitty man maven nvim nodejs npm obsidian ripgrep stow tree tmux unzip zoxide zsh
+sudo pacman -Syu aspnet-runtime base-devel cifs-utils curl dotnet-runtime dotnet-sdk fastfetch fzf gcc ghostty git github-cli jdk-openjdk kitty man maven nvim nodejs npm obsidian ripgrep stow tmux tree unzip zoxide zsh
+
+# Hyprland Options
+read -p "Install hyprland ecosystem? [Y/n]: " ans
+case $ans in
+  [yY] ) sudo pacman -Syu hyprpaper hyprlock hypridle waybar swaync ttf-font-awesome;
+    break;;
+  [nN] ) break;;
+  * ) break;;
 
 # Installs all nerd-fonts
 sudo pacman -S $(pacman -Sgq nerd-fonts)
@@ -33,5 +36,9 @@ yay -S visual-studio-code-bin
 # Installs Google Chrome
 yay -S google-chrome
 
+# Installs NPM Packages
+sudo npm install -g nodemon typescript typescript-language-server @tailwindcss/language-server
+
 . $HOME/dotfiles/utils/scripts/stow.sh
-cd && clear && fastfetch && echo "Complete TMUX setup by running TMUX and pressing <C-b><i> to install TPM plugins. Please make sure to change user shell to zsh with chsh. Setup git config --global user.name and user.email. Authorize github using [gh auth login]."
+
+cd && clear && fastfetch

@@ -36,8 +36,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 nvm install --lts
 nvm use --lts
 
-# Installs Typescript
-sudo npm install -g nodemon typescript
+# Installs NPM Packages
+sudo npm install -g nodemon typescript typescript-language-server @tailwindcss/language-server
 
 # Downloads catppuccin theme for tmux
 mkdir -p ~/.config/tmux/plugins/catppuccin

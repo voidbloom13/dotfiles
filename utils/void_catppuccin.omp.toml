@@ -15,14 +15,14 @@ final_space = true
 
 [transient_prompt]
   template = '❯ '
-  newline = true
+  newline = false
   background = 'transparent'
   foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}p:os{{end}}']
 
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
+  newline = false
 
   [[blocks.segments]]
     template = '{{ .Icon }} '
